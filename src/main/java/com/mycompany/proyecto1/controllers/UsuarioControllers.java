@@ -4,7 +4,7 @@ package com.mycompany.proyecto1.controllers;
 import com.mycompany.proyecto1.models.Usuario;
 
 
-public class UsuarioController {
+public class UsuarioControllers {
     
     public static Usuario[] usuarios = new Usuario[100];
     

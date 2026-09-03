@@ -4,23 +4,29 @@ package com.mycompany.proyecto1.models;
 
 public class Animal {
     
-    private int codigo;
+    private String codigo;
     private String nombre;
-    private String epecie;
+    private String especie;
     private String estado;
+    private String estadoAdopcion;
+    private boolean activo;
 
-    public Animal(int codigo, String nombre, String epecie, String estado) {
+    public Animal(String codigo, String nombre, String especie, String estado,
+    String estadoAdopcion, boolean activo) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.epecie = epecie;
+        this.especie = especie;
         this.estado = estado;
+        this.estadoAdopcion = estadoAdopcion;
+        this.activo = activo; //todo animal registrado inicia activo por defecto.
     }
 
-    public int getCodigo() {
+
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -32,12 +38,12 @@ public class Animal {
         this.nombre = nombre;
     }
 
-    public String getEpecie() {
-        return epecie;
+    public String getEspecie() {
+        return especie;
     }
 
-    public void setEpecie(String epecie) {
-        this.epecie = epecie;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
     public String getEstado() {
@@ -47,6 +53,20 @@ public class Animal {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+        public String getEstadoAdopcion() {
+        return estadoAdopcion;
+    }
+
+    public void setEstadoAdopcion(String estadoAdopcion) {
+        this.estadoAdopcion = estadoAdopcion;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
     
 }
