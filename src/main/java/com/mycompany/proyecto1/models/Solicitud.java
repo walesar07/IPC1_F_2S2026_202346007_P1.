@@ -15,8 +15,18 @@ public class Solicitud {
         this.dpiAdoptante = dpiAdoptante;
         this.codigoAnimal = codigoAnimal;
         this.fecha = fecha;
-        this.estado = "Pendiente";// Por defecto ingresa como pendiente
+        this.estado = estado;
+}
+    
+    public Solicitud(String idSolicitud, String dpiAdoptante, String codigoAnimal, String fecha) {
+        this.idSolicitud = idSolicitud;
+        this.dpiAdoptante = dpiAdoptante;
+        this.codigoAnimal = codigoAnimal;
+        this.fecha = fecha;
+        this.estado = "Pendiente"; // Se asigna automáticamente al crear la solicitud
     }
+        
+    
 
     public String getIdSolicitud() {
         return idSolicitud;

@@ -10,15 +10,18 @@ public class Animal {
     private String estado;
     private String estadoAdopcion;
     private boolean activo;
-
+    private int edad;
+    
+    //constructor principal
     public Animal(String codigo, String nombre, String especie, String estado,
-    String estadoAdopcion, boolean activo) {
+    String estadoAdopcion, boolean activo, int edad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.especie = especie;
         this.estado = estado;
         this.estadoAdopcion = estadoAdopcion;
         this.activo = activo; //todo animal registrado inicia activo por defecto.
+        this.edad = edad;
     }
 
 
@@ -68,5 +71,14 @@ public class Animal {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
     
 }

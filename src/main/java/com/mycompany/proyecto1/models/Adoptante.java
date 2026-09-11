@@ -2,23 +2,23 @@
 package com.mycompany.proyecto1.models;
 
 public class Adoptante{
-    private int dpi;
+    private String dpi;
     private String nombreCompleto;
-    private int telefono;
-    private String direcci0n;
+    private String telefono;
+    private String direccion;
 
-    public Adoptante(int dpi, String nombreCompleto, int telefono, String direcci0n) {
+    public Adoptante(String dpi, String nombreCompleto, String telefono, String direccion) {
         this.dpi = dpi;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
-        this.direcci0n = direcci0n;
+        this.direccion = direccion;
     }
 
-    public int getDpi() {
+    public String getDpi() {
         return dpi;
     }
 
-    public void setDpi(int dpi) {
+    public void setDpi(String dpi) {
         this.dpi = dpi;
     }
 
@@ -30,20 +30,22 @@ public class Adoptante{
         this.nombreCompleto = nombreCompleto;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String getDirecci0n() {
-        return direcci0n;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirecci0n(String direcci0n) {
-        this.direcci0n = direcci0n;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
+
     
+
 }

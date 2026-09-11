@@ -14,6 +14,12 @@ public class Usuario {
         this.password = password;
         this.rol = rol;
     }
+    //Constructor practico (el codigo se asignara automaticament en el controlador)
+    public Usuario(String usuario, String passwrod, String rol){
+        this.usuario = usuario;
+        this.password = password;
+        this.rol = rol;
+    }
 
     public Usuario() {
     }
