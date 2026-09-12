@@ -16,7 +16,7 @@ public class AnimalControllers {
     //Método para agregar un animal validando espacio y duplicados
     public boolean agregarAnimal(Animal nuevo) {
         //validar que el objeto recibido no sea nulo
-        if (nuevo == null || nuevo.getCodigo() == null){
+        if (nuevo == null || nuevo.getCodigo() == null || nuevo.getCodigo().trim().isEmpty()){
             return false;
         }
         if (contador >= animales.length){
@@ -77,5 +77,44 @@ public class AnimalControllers {
             return true;
         }
         return false;
+    }
+    //Retorna un arreglo estático dimensionado exactamente con los animales activos
+    public Animal[] obtenerAnimalesActivos(){
+        int activosCount = 0;
+        //1.Primer recorrido: contar activos
+        for ( int i=0; i<contador; i++){
+            if (animales[i] != null && animales[i].isActivo()){
+                activosCount++;
+            }
+        }
+        //2. Crear arreglo est[atico del tamano exacto necesario
+        Animal[] activos = new Animal[activosCount];
+        int index = 0;
+        //3. Segundo recorrido: copiar referencias
+        for (int i=0; i<contador; i++){
+            if (animales[i] != null && animales[i].isActivo()){
+                activos[index]= animales[i];
+                index++;
+            }
+                
+        }
+        return activos;
+            
+    }
+   // Retorna todos los registros almacenados hasta el momento (activos e inactivos)
+   public Animal[] obtenerTodosLosAnimales() {
+        Animal[] registrados = new Animal[contador];
+        for (int i = 0; i < contador; i++) {
+            registrados[i] = animales[i];
+        }
+        return registrados;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public int getCapacidadMaxima() {
+        return animales.length;
     }
 }
