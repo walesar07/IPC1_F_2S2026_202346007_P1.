@@ -45,6 +45,14 @@ public class UbicacionControllers {
     public EspacioRefugio[][] getMatrizRefugio(){
         return matrizRefugio;
     }
+    
+    public int getFilas() {
+        return filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
         
 }
 

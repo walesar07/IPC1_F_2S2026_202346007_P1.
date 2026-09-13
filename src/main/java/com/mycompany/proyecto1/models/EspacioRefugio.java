@@ -19,10 +19,15 @@ public class EspacioRefugio {
         this.estadoEspacio = estadoEspacio;
     }
 
-    public EspacioRefugio(int i, int j) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+   // Constructor simplificado para inicializar libre
+    public EspacioRefugio(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
+        this.codigoAnimal = null;
+        this.ocupado = false;
+        this.estadoEspacio = "Disponible";
     }
-
+    
     public int getFila() {
         return fila;
     }
@@ -45,6 +50,13 @@ public class EspacioRefugio {
 
     public void setCodigoAnimal(String codigoAnimal) {
         this.codigoAnimal = codigoAnimal;
+        if (codigoAnimal != null && !codigoAnimal.isEmpty()) {
+            this.ocupado = true;
+            this.estadoEspacio = "Ocupado";
+        } else {
+            this.ocupado = false;
+            this.estadoEspacio = "Disponible";
+        }
     }
 
     public boolean isOcupado() {

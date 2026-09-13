@@ -13,7 +13,7 @@ public class UsuarioControllers {
     public UsuarioControllers(){
         //Solo los agrega si el arreglo esta vacio para no duplicarlos
         if (usuarios[0] == null){
-            registrarUsuario(new Usuario("admin", "1234", "ADMIN"));
+            registrarUsuario(new Usuario("admin", "1234", "ADMINISTRADOR"));
             registrarUsuario(new Usuario("auxiliar", "1234", "AUXILIAR"));
         }
     }
@@ -23,9 +23,11 @@ public class UsuarioControllers {
         if (usuarios == null || usuario == null || password == null){
             return null;
         }
-       
-        if (usuario.isEmpty() || password.isEmpty()){
-            return null;
+         String userLimpio = usuario.trim();
+         String passLimpia = password.trim();
+         
+        if (userLimpio.isEmpty() || passLimpia.isEmpty()) {
+        return null;
         }
         for (Usuario u: usuarios){
             if(u == null){
@@ -34,11 +36,11 @@ public class UsuarioControllers {
             String usuarioGuardado = u.getUsuario();
             String passwordGuardado = u.getPassword();
             
-            if(usuarioGuardado == null){
+            if(usuarioGuardado == null || passwordGuardado == null){
                 continue;                
             }
             
-            if(usuarioGuardado.equals(usuario) && passwordGuardado.equals(password)){
+            if(usuarioGuardado.equalsIgnoreCase(userLimpio) && passwordGuardado.equals(passLimpia)){
                 return u;
             }
         }

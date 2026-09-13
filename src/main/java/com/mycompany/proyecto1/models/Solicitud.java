@@ -18,13 +18,13 @@ public class Solicitud {
         this.estado = estado;
 }
     
-    public Solicitud(String idSolicitud, String dpiAdoptante, String codigoAnimal, String fecha) {
-        this.idSolicitud = idSolicitud;
-        this.dpiAdoptante = dpiAdoptante;
-        this.codigoAnimal = codigoAnimal;
-        this.fecha = fecha;
-        this.estado = "Pendiente"; // Se asigna automáticamente al crear la solicitud
-    }
+   public Solicitud(String idSolicitud, String dpiAdoptante, String codigoAnimal, String estado) {
+    this.idSolicitud = idSolicitud;
+    this.dpiAdoptante = dpiAdoptante;
+    this.codigoAnimal = codigoAnimal;
+    this.fecha = java.time.LocalDate.now().toString(); // O una fecha por defecto
+    this.estado = estado; 
+}
         
     
 

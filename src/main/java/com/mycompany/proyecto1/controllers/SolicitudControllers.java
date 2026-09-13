@@ -35,7 +35,7 @@ public class SolicitudControllers {
     }
     
     //Cambiar estado de la solicitud
-    public boolean cambiarEStado(String idSolicitud, String nuevoEstado){
+    public boolean cambiarEstado(String idSolicitud, String nuevoEstado){
         Solicitud s = buscarPorId(idSolicitud);
         if(s != null){
             s.setEstado(nuevoEstado);
@@ -52,4 +52,7 @@ public class SolicitudControllers {
         }
         return resultado;
     }   
+    public int getContador() {
+        return contador;
+    }
 }
